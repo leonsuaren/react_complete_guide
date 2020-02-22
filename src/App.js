@@ -33,11 +33,11 @@ class App extends Component {
     )
   }
 
-  switchInfoHandler = () => {
+  switchInfoHandler = (newName) => {
     this.setState(
       {
         pets: [
-          { type : "Tigre", name: "Tigre", origen: "Africa" },
+          { type : "Tigre", name: newName, origen: "Africa" },
           { type : "Dog", name: "Tecate", origen: "casa" },
           { type : "Cat", name: "Tom", origen: "Casa" }
         ]
@@ -51,14 +51,31 @@ class App extends Component {
         <h1>Hi!! I'm a React App</h1>
         <p>This is really woking!</p>
         <button onClick = { this.switchNameHandler } >Switch Name</button>
-        <Person name= { this.state.persons[0].name } age= { this.state.persons[0].age } />
-        <Person name= { this.state.persons[1].name } age= { this.state.persons[1].age } >My Hobbies: Parachute</Person>
-        <Person name= { this.state.persons[2].name } age= { this.state.persons[2].age } />
+        <Person 
+        name= { this.state.persons[0].name } 
+        age= { this.state.persons[0].age } />
+        <Person 
+        name= { this.state.persons[1].name } 
+        age= { this.state.persons[1].age } 
+        >My Hobbies: Parachute</Person>
+        <Person 
+        name= { this.state.persons[2].name } 
+        age= { this.state.persons[2].age } />
         <h1>THIS IS A REACT TEST APP</h1>
-        <button onClick = { this.switchInfoHandler }>Switch Information</button> 
-        <Pets type = { this.state.pets[0].type } name = { this.state.pets[0].name } origen = { this.state.pets[0].origen } />
-        <Pets type = { this.state.pets[1].type } name = { this.state.pets[1].name } origen = { this.state.pets[1].origen } />
-        <Pets type = { this.state.pets[2].type } name = { this.state.pets[2].name } origen = { this.state.pets[2].origen } />
+        <button onClick = { () => this.switchInfoHandler('Pantera') }>Switch Information</button> 
+        <Pets 
+        type = { this.state.pets[0].type } 
+        name = { this.state.pets[0].name } 
+        origen = { this.state.pets[0].origen } />
+        <Pets 
+        type = { this.state.pets[1].type } 
+        name = { this.state.pets[1].name } 
+        origen = { this.state.pets[1].origen }
+        click = { this.switchInfoHandler.bind( this, 'Leopardo' ) } >And he was the best dog ever</Pets>
+        <Pets 
+        type = { this.state.pets[2].type } 
+        name = { this.state.pets[2].name } 
+        origen = { this.state.pets[2].origen } />
       </div>
     );
     // return React.createElement('div', { className: 'App'}, React.createElement('h1', null, 'Does this Work?'))
