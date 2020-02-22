@@ -45,6 +45,18 @@ class App extends Component {
     )
   }
 
+  nameChangedHandler = (event) => {
+    this.setState(
+      {
+        pets: [
+          { type : "Tigre", name: "Tigre", origen: "Africa" },
+          { type : "Dog", name: event.target.value, origen: "casa" },
+          { type : "Cat", name: "Tom", origen: "Casa" }
+        ]
+      }
+    )
+  }
+
   render() {
     return (
       <div className="App">
@@ -62,7 +74,7 @@ class App extends Component {
         name= { this.state.persons[2].name } 
         age= { this.state.persons[2].age } />
         <h1>THIS IS A REACT TEST APP</h1>
-        <button onClick = { () => this.switchInfoHandler('Pantera') }>Switch Information</button> 
+        <button onClick = { () => this.switchInfoHandler('Pantera') } >Switch Information</button> 
         <Pets 
         type = { this.state.pets[0].type } 
         name = { this.state.pets[0].name } 
@@ -71,7 +83,9 @@ class App extends Component {
         type = { this.state.pets[1].type } 
         name = { this.state.pets[1].name } 
         origen = { this.state.pets[1].origen }
-        click = { this.switchInfoHandler.bind( this, 'Leopardo' ) } >And he was the best dog ever</Pets>
+        click = { this.switchInfoHandler.bind( this, 'Leopardo' ) } 
+        change = { this.nameChangedHandler }
+        >And he was the best dog ever</Pets>
         <Pets 
         type = { this.state.pets[2].type } 
         name = { this.state.pets[2].name } 
