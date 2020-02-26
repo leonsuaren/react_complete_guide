@@ -6,9 +6,9 @@ class App extends Component {
 
   state = {
     persons: [
-      { name: "Roberto", age: 41 },
-      { name: "Leon", age: 40 },
-      { name: "Nena", age: 19 }
+      { id: "uinnsu", name: "Roberto", age: 41 },
+      { id: "nusnai", name: "Leon", age: 40 },
+      { id: "qbaysb", name: "Nena", age: 19 }
     ],
     otherState: "Some other value",
     showPersons: false
@@ -58,6 +58,7 @@ class App extends Component {
               click = { () =>  this.deletePersonHandler(index) }
               name={person.name}
               age={person.age}
+              key = {person.id}
             />
           })}
         </div>
