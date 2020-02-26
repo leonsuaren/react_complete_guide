@@ -70,12 +70,26 @@ class App extends Component {
   }
 
   render() {
+
+    const style = {
+      backgroundColor: "White",
+      font: "inherit",
+      border: "1px solid green",
+      padding: "8px",
+      cursor: "pointer",
+      margin: "2px"
+    }
+
     return (
       <div className="App">
         <h1>Hi!! I'm a React App</h1>
         <p>This is really woking!</p>
-        <button onClick={this.switchNameHandler} >Switch Name</button>
-        <button onClick={this.togglePersonsHandler} >Toggle Persons</button>
+        <button 
+        style = { style }
+        onClick={this.switchNameHandler} >Switch Name</button>
+        <button 
+        style = { style }
+        onClick={this.togglePersonsHandler} >Toggle Persons</button>
         {
           this.state.showPersons === true ?
           <div>
@@ -92,7 +106,9 @@ class App extends Component {
           </div> : null
         }
         <h1>THIS IS A REACT TEST APP</h1>
-        <button onClick={this.togglePetsHandler} >Toggle Pets</button>
+        <button 
+        style = { style }
+        onClick={this.togglePetsHandler} >Toggle Pets</button>
         {this.state.showPets === true ?
           <div>
             <Pets
