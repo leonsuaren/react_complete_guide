@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 import Pets from './Person/Pets';
+import Practice from './Person/Practice';
+import ClassComponent from './Person/Classcomponent';
+import Cars from './Person/UseState';
 
 class App extends Component {
 
@@ -18,7 +21,25 @@ class App extends Component {
       { type: "Cat", name: "Tom", origen: "Casa" }
     ],
     showPets: false,
-    showPersons: false
+    showPersons: false,
+    greatings: [
+      { number: 1, message: 'Holaaa!!' },
+      { number: 2, message: 'HIIII!!' },
+      { number: 3, message: 'Hellooo!!' }
+    ]
+  }
+
+  clickMeHandler = () => {
+    // console.log('I\'ve been clicked');
+    this.setState(
+      {
+        greatings: [
+          { number: 1, message: 'Hellooo' },
+          { number: 2, message: 'HI FROM REACT!!' },
+          { number: 3, message: 'Holaaaa!!' }
+        ]
+      }
+    )
   }
 
   switchNameHandler = () => {
@@ -59,6 +80,12 @@ class App extends Component {
     )
   }
 
+  practiceNameHandler = (event) => {
+    this.setState({
+      
+    })
+  }
+
   togglePetsHandler = () => {
     const doesShowPets = this.state.showPets;
     this.setState({ showPets: !doesShowPets })
@@ -66,7 +93,7 @@ class App extends Component {
 
   togglePersonsHandler = () => {
     const doesShowPerson = this.state.showPersons;
-    this.setState( { showPersons: !doesShowPerson } );
+    this.setState({ showPersons: !doesShowPerson });
   }
 
   render() {
@@ -84,31 +111,31 @@ class App extends Component {
       <div className="App">
         <h1>Hi!! I'm a React App</h1>
         <p>This is really woking!</p>
-        <button 
-        style = { style }
-        onClick={this.switchNameHandler} >Switch Name</button>
-        <button 
-        style = { style }
-        onClick={this.togglePersonsHandler} >Toggle Persons</button>
+        <button
+          style={style}
+          onClick={this.switchNameHandler} >Switch Name</button>
+        <button
+          style={style}
+          onClick={this.togglePersonsHandler} >Toggle Persons</button>
         {
           this.state.showPersons === true ?
-          <div>
-            <Person
-              name={this.state.persons[0].name}
-              age={this.state.persons[0].age} />
-            <Person
-              name={this.state.persons[1].name}
-              age={this.state.persons[1].age}
-            >My Hobbies: Parachute</Person>
-            <Person
-              name={this.state.persons[2].name}
-              age={this.state.persons[2].age} />
-          </div> : null
+            <div>
+              <Person
+                name={this.state.persons[0].name}
+                age={this.state.persons[0].age} />
+              <Person
+                name={this.state.persons[1].name}
+                age={this.state.persons[1].age}
+              >My Hobbies: Parachute</Person>
+              <Person
+                name={this.state.persons[2].name}
+                age={this.state.persons[2].age} />
+            </div> : null
         }
         <h1>THIS IS A REACT TEST APP</h1>
-        <button 
-        style = { style }
-        onClick={this.togglePetsHandler} >Toggle Pets</button>
+        <button
+          style={style}
+          onClick={this.togglePetsHandler} >Toggle Pets</button>
         {this.state.showPets === true ?
           <div>
             <Pets
@@ -128,6 +155,11 @@ class App extends Component {
               origen={this.state.pets[2].origen} />
           </div> : null
         }
+        <button onClick={this.clickMeHandler} style={style} >Click me!!</button>
+        <Practice number={this.state.greatings[0].number} message={this.state.greatings[0].message} />
+        <Practice number={this.state.greatings[1].number} message={this.state.greatings[1].message} />
+        <Practice number={this.state.greatings[2].number} message={this.state.greatings[2].message}><ClassComponent></ClassComponent> </Practice>
+        <Cars></Cars>
       </div>
     );
     // return React.createElement('div', { className: 'App'}, React.createElement('h1', null, 'Does this Work?'))
