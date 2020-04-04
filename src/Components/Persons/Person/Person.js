@@ -17,12 +17,6 @@ text-align: center;
 
 const person = (props) => {
 
-    const style = {
-        '@media (min-width: 500px)': {
-            width: '450px'
-        }
-    }
-
     return (
         <StyleDiv>
             <p onClick={props.click} >I'm a {props.name} and I'm {props.age} years old!!</p>
