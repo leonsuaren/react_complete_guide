@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import './App.css';
-import Person from './Person/Person';
+import Person from '../Components/Persons/Person/Person';
+import Persons from '../Components/Persons/Persons';
 
 const StyledButton = styled.button`
     background-color: ${props => props.alt ? 'red' : 'green'};
@@ -66,15 +67,7 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((person, index) => {
-            return <Person
-              click={() => this.deletePersonHandler(index)}
-              name={person.name}
-              age={person.age}
-              key={person.id}
-              change={(event) => this.nameChangedHandler(event, person.id)}
-            />
-          })}
+          <Persons persons={this.state.persons} clicked={this.deletePersonHandler} chancged={this.nameChangedHandler} />
         </div>
       )
       // style.backgroundColor = 'red';
@@ -93,14 +86,14 @@ class App extends Component {
     }
 
     return (
-        <div className="App">
-          <h1>Hi!! I'm a React App</h1>
-          <p className={classes.join(' ')}>This is really woking!</p>
-          <StyledButton alt={this.state.showPersons}
-            onClick={this.togglePersonHandler} >Toggle Persons
+      <div className="App">
+        <h1>Hi!! I'm a React App</h1>
+        <p className={classes.join(' ')}>This is really woking!</p>
+        <StyledButton alt={this.state.showPersons}
+          onClick={this.togglePersonHandler} >Toggle Persons
             </StyledButton>
-          {persons}
-        </div>
+        {persons}
+      </div>
     );
     // return React.createElement('div', { className: 'App'}, React.createElement('h1', null, 'Does this Work?'))
   }
