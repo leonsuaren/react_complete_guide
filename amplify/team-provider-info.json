@@ -1,0 +1,15 @@
+{
+    "javascript": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-react-complete-guide-javascript-202807-authRole",
+            "UnauthRoleArn": "arn:aws:iam::106328123506:role/amplify-react-complete-guide-javascript-202807-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::106328123506:role/amplify-react-complete-guide-javascript-202807-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-react-complete-guide-javascript-202807-deployment",
+            "UnauthRoleName": "amplify-react-complete-guide-javascript-202807-unauthRole",
+            "StackName": "amplify-react-complete-guide-javascript-202807",
+            "StackId": "arn:aws:cloudformation:us-east-2:106328123506:stack/amplify-react-complete-guide-javascript-202807/5c139800-7b8b-11ea-a7da-022fd555c652",
+            "AmplifyAppId": "d2nugmheh6tmgy"
+        }
+    }
+}
