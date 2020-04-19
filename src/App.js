@@ -5,6 +5,7 @@ import Pets from './Person/Pets';
 import Practice from './Person/Practice';
 import ClassComponent from './Person/Classcomponent';
 import Cars from './Person/UseState';
+import { withAuthentication } from 'aws-amplify-react';
 
 class App extends Component {
 
@@ -166,4 +167,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthentication(App);
