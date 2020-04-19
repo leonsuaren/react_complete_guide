@@ -171,7 +171,7 @@ class App extends Component {
 }
 
 export default withAuthenticator(App, false, [
-  <MySignIn/>,
+  <SignIn/>,
   <ConfirmSignIn/>,
   <VerifyContact/>,
   <SignUp/>,
