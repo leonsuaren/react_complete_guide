@@ -10,6 +10,11 @@
             "StackName": "amplify-react-complete-guide-javascript-202807",
             "StackId": "arn:aws:cloudformation:us-east-2:106328123506:stack/amplify-react-complete-guide-javascript-202807/5c139800-7b8b-11ea-a7da-022fd555c652",
             "AmplifyAppId": "d2nugmheh6tmgy"
+        },
+        "categories": {
+            "auth": {
+                "reactcompleteguide6c157f8d": {}
+            }
         }
     }
 }
