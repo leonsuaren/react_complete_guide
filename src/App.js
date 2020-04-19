@@ -5,6 +5,10 @@ import Pets from './Person/Pets';
 import Practice from './Person/Practice';
 import ClassComponent from './Person/Classcomponent';
 import Cars from './Person/UseState';
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+import { ConfirmSignIn, ConfirmSignUp, ForgotPassword, RequireNewPassword, SignIn, SignUp, VerifyContact, withAuthenticator } from 'aws-amplify-react';
+Amplify.configure(awsconfig);
 
 class App extends Component {
 
@@ -166,4 +170,12 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthenticator(App, false, [
+  <MySignIn/>,
+  <ConfirmSignIn/>,
+  <VerifyContact/>,
+  <SignUp/>,
+  <ConfirmSignUp/>,
+  <ForgotPassword/>,
+  <RequireNewPassword />
+]);
