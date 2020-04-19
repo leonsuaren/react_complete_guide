@@ -5,10 +5,6 @@ import Pets from './Person/Pets';
 import Practice from './Person/Practice';
 import ClassComponent from './Person/Classcomponent';
 import Cars from './Person/UseState';
-import { withAuthenticator } from 'aws-amplify-react';
-import Amplify, { Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
 
 class App extends Component {
 
@@ -170,4 +166,4 @@ class App extends Component {
   }
 }
 
-export default withAuthenticator(App);
+export default App;
